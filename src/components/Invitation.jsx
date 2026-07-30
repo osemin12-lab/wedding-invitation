@@ -80,8 +80,8 @@ function Invitation() {
             '4','5','6','7','8','9','10',
             '11','12','13','14','15','16','17',
             '18','19','20','21','22','23','24',
-            '25','26','27','28','29','30','31'
-            <div className="highlight">30</div>]
+            '25','26','27','28','29','30','31']
+            <div className="highlight">30</div>
             .map((day, i) => (
               <div key={i} className="calendar-day">{day}</div>
             ))}
