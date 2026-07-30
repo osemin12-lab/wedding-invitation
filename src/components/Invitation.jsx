@@ -27,7 +27,7 @@ function Invitation() {
   }, [])
 
   const groom = {
-    name: '전영호',
+    name: '오세민',
     phone: '010-3943-0463',
     kakao: 'https://open.kakao.com/o/groom-link'
   }
