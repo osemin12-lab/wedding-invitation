@@ -83,16 +83,22 @@ function Invitation() {
     '22','23','24','25','26','27','28',
     '29','30','31'
   ];
-           <div 
-          key={i} 
-          className={day === '30' ? "calendar-day highlight" : "calendar-day"}
-        >
-          {day}
-        </div>
-      ))}
+
+  return (
+    <div className="calendar">
+      <div className="calendar-header">10월</div>
+      <div className="calendar-grid">
+        {days.map((day, i) => (
+          <div 
+            key={i} 
+            className={day === '30' ? "calendar-day highlight" : "calendar-day"}
+          >
+            {day}
+          </div>
+        ))}
+      </div>
     </div>
-  </div> //
   );
 }
 
-export default Invitation
+export default Invitation;
