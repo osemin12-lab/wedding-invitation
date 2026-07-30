@@ -5,7 +5,7 @@ function Countdown(){
 
     useEffect(()=>{
         const today = new Date() //날짜랑 시간 다루는 객체
-        const targetDate = new Date('2034-11-30')
+        const targetDate = new Date('2026-10-24')
         const diff = targetDate-today
 
         const remaining = Math.ceil(diff/(1000*60*60*24))
@@ -14,9 +14,9 @@ function Countdown(){
 
     return(
         <div>
-            {/* <h2>연아윤 ♡ 전영호 님의 결혼식</h2> */}
+            {/* <h2>오세민 ♡ 이지현 님의 결혼식</h2> */}
             <p style={{ marginTop: '30px' }}>
-            연아윤 ♡ 전영호 님의 결혼식 {dayLeft}일 전
+            오세민 ♡ 이지현 님의 결혼식 {dayLeft}일 전
             </p>
         </div>
     )

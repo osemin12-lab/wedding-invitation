@@ -10,8 +10,8 @@ function Header() {
       </div>
 
       <div className="header-image">
-        <img src="/main.jpg" alt="wedding" />
-      </div>
+  <video src="/main.mp4" autoPlay loop muted playsInline />
+</div>
 
       <div className="header-footer">
         <p className="name"><strong>오세민</strong> &nbsp; | &nbsp; <strong>이지현</strong></p>
