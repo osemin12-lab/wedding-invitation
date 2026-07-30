@@ -2,15 +2,15 @@ import '../styles/Gallery.css';
 
 function Gallery() {
     const images = [
-        "/image1.jpg",
-        "/image2.jpg",
-        "/image3.jpg",
-        "/image4.jpg",
-        "/image1.jpg",
-        "/image6.jpg",
-        "/image7.jpg",
-        "/image8.jpg",
-        "/image9.jpg"
+        "/image1.JPG",
+        "/image2.JPG",
+        "/image3.JPG",
+        "/image4.JPG",
+        "/image1.JPG",
+        "/image6.JPG",
+        "/image7.JPG",
+        "/image8.JPG",
+        "/image9.JPG"
     ];
 
     return (
