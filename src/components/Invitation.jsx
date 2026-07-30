@@ -91,6 +91,7 @@ function Invitation() {
         </div>
       ))}
     </div>
+  </div> //
   );
 }
 
