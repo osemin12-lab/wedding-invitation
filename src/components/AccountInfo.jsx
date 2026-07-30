@@ -16,15 +16,15 @@ function AccountInfo() {
   };
 
   const groomAccount = {
-    name: "전영호",
-    bank: "카카오뱅크",
-    number: "7777020333613"
+    name: "오세민",
+    bank: "하나은행",
+    number: "70491050915407"
   };
 
   const brideAccount = {
-    name: "연아윤",
+    name: "이지현",
     bank: "카카오뱅크",
-    number: "7777019925749"
+    number: "11111111111111"
   };
 
   return (
