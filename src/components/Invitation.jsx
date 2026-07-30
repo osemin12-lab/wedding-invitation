@@ -6,6 +6,15 @@ function Invitation() {
   const cardRef = useRef(null)
   const [isVisible, setIsVisible] = useState(false)
 
+  // 달력 날짜 데이터 (return 문 바깥에 선언)
+  const days = [
+    '1','2','3','4','5','6','7',
+    '8','9','10','11','12','13','14',
+    '15','16','17','18','19','20','21',
+    '22','23','24','25','26','27','28',
+    '29','30','31'
+  ]
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -45,12 +54,12 @@ function Invitation() {
     >
       <div className="invitation-icon">
         <img src="/flower.png" alt="flower" />
-    </div>
+      </div>
     
       <h2>INVITATION</h2>
       <p className="invitation-text">
         벚꽃이 피고 지기 시작하는 계절이었던,<br/><br/>
-        <strong>2022년 4월,</strong>,<br/>
+        <strong>2022년 4월,</strong><br/>
         우리의 첫 만남이 따스한 인연이 되었습니다.<br/><br/>
         그리고 4년이 지난 오늘, <strong>2026년 10월 24일</strong>,<br/>
         그 인연을 영원한 사랑으로 맺으려 합니다.<br/><br/>
@@ -76,29 +85,18 @@ function Invitation() {
       <div className="calendar">
         <div className="calendar-header">10월</div>
         <div className="calendar-grid">
-        const days = [
-    '1','2','3','4','5','6','7',
-    '8','9','10','11','12','13','14',
-    '15','16','17','18','19','20','21',
-    '22','23','24','25','26','27','28',
-    '29','30','31'
-  ];
-
-  return (
-    <div className="calendar">
-      <div className="calendar-header">10월</div>
-      <div className="calendar-grid">
-        {days.map((day, i) => (
-          <div 
-            key={i} 
-            className={day === '30' ? "calendar-day highlight" : "calendar-day"}
-          >
-            {day}
-          </div>
-        ))}
+          {days.map((day, i) => (
+            <div 
+              key={i} 
+              className={day === '24' ? "calendar-day highlight" : "calendar-day"}
+            >
+              {day}
+            </div>
+          ))}
+        </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default Invitation;
+export default Invitation
