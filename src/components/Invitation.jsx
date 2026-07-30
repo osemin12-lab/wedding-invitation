@@ -76,24 +76,22 @@ function Invitation() {
       <div className="calendar">
         <div className="calendar-header">10월</div>
         <div className="calendar-grid">
-          {['1','2','3','4','5','6','7',
-  '8','9','10','11','12','13','14',
-  '15','16','17','18','19','20','21',
-  '22','23','24','25','26','27','28',
-  '29','30','31'
-];
-            {days.map((day, i) => (
-  <div 
-    key={i} 
-    className={day === '30' ? "calendar-day highlight" : "calendar-day"}
-  >
-    {day}
-  </div>
-))}
+          const days = [
+    '1','2','3','4','5','6','7',
+    '8','9','10','11','12','13','14',
+    '15','16','17','18','19','20','21',
+    '22','23','24','25','26','27','28',
+    '29','30','31'
+  ];
+           <div 
+          key={i} 
+          className={day === '30' ? "calendar-day highlight" : "calendar-day"}
+        >
+          {day}
         </div>
-      </div>
+      ))}
     </div>
-  )
+  );
 }
 
 export default Invitation
