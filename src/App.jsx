@@ -6,10 +6,14 @@ import AccountInfo from './components/AccountInfo'
 import Countdown from './components/Countdown'
 import Gallery from './components/Gallery'
 import Location from './components/Location'
+import Bgmplayer from './Bgmplayer'
 
 function App() {
   return (
     <div>
+      {/* 배경음악 플레이어 */}
+      <Bgmplayer />
+
       {/* 1. 메인 화면 (커버) */}
       <Header />
 
