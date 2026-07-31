@@ -11,13 +11,17 @@ const accountData = [
         relation: '신랑',
         bank: '하나은행',
         account: '704-910509-15407',
-        kakaopayAccount: 'https://qr.kakaopay.com/...', // 카카오페이 QR/송금 링크 (선택)
-        tossAccount: 'https://toss.me/...',           // 토스 송금 링크 (선택)
       },
       {
         name: '오상환',
         relation: '신랑 아버지',
         bank: '신한은행',
+        account: '11111-1111-111',
+      },
+      {
+        name: '김계현',
+        relation: '신랑 어머니',
+        bank: '은행명',
         account: '11111-1111-111',
       },
     ],
@@ -31,19 +35,24 @@ const accountData = [
         bank: '카카오뱅크',
         account: '1111-11-2345678',
       },
+      {
+        name: '이동술',
+        relation: '신부 아버지',
+        bank: '은행명',
+        account: '계좌번호',
+      },
+      {
+        name: '이귀자',
+        relation: '신부 어머니',
+        bank: '은행명',
+        account: '계좌번호',
+      },
     ],
   },
 ];
 
 // 2. 개별 계좌 항목 컴포넌트
-const AccountItem = ({
-  name,
-  relation,
-  bank,
-  account,
-  kakaopayAccount,
-  tossAccount,
-}) => {
+const AccountItem = ({ name, relation, bank, account }) => {
   const [copied, setCopied] = useState(false);
 
   const handleCopy = () => {
@@ -65,16 +74,6 @@ const AccountItem = ({
         <CopyButton onClick={handleCopy}>
           {copied ? '복사됨!' : '계좌번호 복사'}
         </CopyButton>
-        {kakaopayAccount && (
-          <LinkButton href={kakaopayAccount} target="_blank" rel="noreferrer">
-            카카오페이
-          </LinkButton>
-        )}
-        {tossAccount && (
-          <LinkButton href={tossAccount} target="_blank" rel="noreferrer">
-            토스
-          </LinkButton>
-        )}
       </ButtonArea>
     </ItemWrapper>
   );
@@ -95,7 +94,7 @@ const Accordion = ({ title, children }) => {
   );
 };
 
-// 4. 메인 AccountInfo 컴포넌트 (파일명과 동일하게 맞춰 변경)
+// 4. 메인 AccountInfo 컴포넌트
 export default function AccountInfo() {
   return (
     <Container>
@@ -109,8 +108,6 @@ export default function AccountInfo() {
               relation={account.relation}
               bank={account.bank}
               account={account.account}
-              kakaopayAccount={account.kakaopayAccount}
-              tossAccount={account.tossAccount}
             />
           ))}
         </Accordion>
@@ -119,7 +116,7 @@ export default function AccountInfo() {
   );
 }
 
-// 5. 스타일 정의
+// 5. CSS 스타일 정의
 const Container = styled.div`
   width: 100%;
   max-width: 450px;
@@ -214,20 +211,5 @@ const CopyButton = styled.button`
 
   &:hover {
     background-color: #e2e8f0;
-  }
-`;
-
-const LinkButton = styled.a`
-  padding: 6px 12px;
-  font-size: 0.8rem;
-  border: 1px solid #cbd5e1;
-  background-color: #fff;
-  border-radius: 4px;
-  text-decoration: none;
-  color: #333;
-  display: inline-block;
-
-  &:hover {
-    background-color: #f8fafc;
   }
 `;
