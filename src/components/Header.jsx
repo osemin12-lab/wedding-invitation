@@ -15,7 +15,7 @@ function Header() {
 
       <div className="header-footer">
         <p className="name"><strong>오세민</strong> &nbsp; | &nbsp; <strong>이지현</strong></p>
-        <p className="holl">창원 힐스카이웨딩홀 10층 그랜드볼룸</p>
+        <p className="holl">창원 힐스카이웨딩&컨벤션 10층 힐그랜드</p>
       </div>
     </header>
   );
