@@ -1,21 +1,32 @@
 import React from 'react'
 import './App.css'
 import Header from './components/Header'
-import Countdown from './components/Countdown'
 import Invitation from './components/Invitation'
-import Gallery from './components/Gallery'
 import AccountInfo from './components/AccountInfo'
-import Location from './components/Location' // 1. 불러오기 확인
+import Countdown from './components/Countdown'
+import Gallery from './components/Gallery'
+import Location from './components/Location'
 
 function App() {
   return (
     <div>
+      {/* 1. 메인 화면 (커버) */}
       <Header />
+
+      {/* 2. 초대글 */}
       <Invitation />
-      <Countdown />
-      <Location /> {/* 2. 배치가 되어있는지 확인 */}
-      <Gallery />
+
+      {/* 3. 신랑·신부 계좌번호 (마음 전하실 곳) */}
       <AccountInfo />
+
+      {/* 4. 결혼식 일시 & 달력 (D-Day) */}
+      <Countdown />
+
+      {/* 5. 갤러리 */}
+      <Gallery />
+
+      {/* 6. 오시는 길 (지도) */}
+      <Location />
     </div>
   )
 }
