@@ -3,6 +3,7 @@ import './App.css'
 import Header from './components/Header'
 import Countdown from './components/Countdown'
 import Invitation from './components/Invitation'
+import Location from './components/Location'
 import Gallery from './components/Gallery'
 import AccountInfo from './components/AccountInfo'
 

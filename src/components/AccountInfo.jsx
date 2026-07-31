@@ -7,18 +7,18 @@ const accountData = [
     host: '신랑측',
     accountInfo: [
       {
-        name: '홍길동',
+        name: '오세민',
         relation: '신랑',
-        bank: '국민은행',
-        account: '123-456-789012',
+        bank: '하나은행',
+        account: '704-910509-15407',
         kakaopayAccount: 'https://qr.kakaopay.com/...', // 카카오페이 QR/송금 링크 (선택)
         tossAccount: 'https://toss.me/...',           // 토스 송금 링크 (선택)
       },
       {
-        name: '홍판서',
+        name: '오상환',
         relation: '신랑 아버지',
         bank: '신한은행',
-        account: '987-654-321098',
+        account: '11111-1111-111',
       },
     ],
   },
@@ -26,10 +26,10 @@ const accountData = [
     host: '신부측',
     accountInfo: [
       {
-        name: '성춘향',
+        name: '이지현',
         relation: '신부',
         bank: '카카오뱅크',
-        account: '3333-01-2345678',
+        account: '1111-11-2345678',
       },
     ],
   },
