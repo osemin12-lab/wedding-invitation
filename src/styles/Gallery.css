@@ -1,46 +1,78 @@
-/* 1. 기본 갤러리 그리드 이미지 (클릭 전) */
+/* ==========================================================================
+   1. 메인 갤러리 그리드 (기본 & 모바일 모두 3x3 유지)
+   ========================================================================== */
+.gallery-wrapper {
+    width: 100%;
+    max-width: 600px; /* 전체 갤러리 최대 너비 */
+    margin: 0 auto;
+    padding: 0 16px;
+    box-sizing: border-box;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 무조건 3열 배치 (9장 = 3x3) */
+    gap: 8px; /* 사진 사이 간격 */
+    width: 100%;
+}
+
 .gallery-grid img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 8px;
-  cursor: pointer;
+    width: 100%;
+    aspect-ratio: 1 / 1; /* 1:1 정사각형 비율 유지 */
+    object-fit: cover; /* 이미지가 일그러지지 않게 채움 */
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
 }
 
-/* 2. 모바일 기본 레이아웃 조정 */
+.gallery-grid img:hover {
+    transform: scale(1.02);
+}
+
+/* 모바일 전용 미세 조정 (3x3 유지하되 간격/여백만 살짝 축소) */
 @media (max-width: 480px) {
-  .gallery-wrapper {
-    padding: 0 8px;
-  }
-  .gallery-grid {
-    gap: 6px;
-  }
+    .gallery-wrapper {
+        padding: 0 8px;
+    }
+    .gallery-grid {
+        gap: 6px;
+    }
 }
 
-/* --------------------------------------------------
- * 3. [핵심] 사진 클릭 시 뜨는 원본 모달(팝업) 이미지 크기 조정
- * -------------------------------------------------- */
-/* 모달 내부의 모든 이미지에 대해 기본적으로 화면을 넘지 않게 설정 */
+
+/* ==========================================================================
+   2. 사진 클릭 시 뜨는 원본 모달(팝업) 레이아웃
+   ========================================================================== */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.85); /* 어두운 배경 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    position: relative;
+    max-width: 90vw;
+    max-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 모달 내부 확대 이미지 (메인 그리드 영향 받지 않음) */
 .modal-overlay img,
-.modal-content img,
-.gallery-modal img,
-.modal img {
-  max-width: 90vw !important;   /* 화면 너비의 최대 90%로 제한 */
-  max-height: 80vh !important;  /* 화면 높이의 최대 80%로 제한 (한눈에 들어옴) */
-  width: auto !important;       /* 원본 비율 유지 */
-  height: auto !important;      /* 원본 비율 유지 */
-  object-fit: contain !important; /* 이미지 잘림 없이 전체 표시 */
-  margin: auto;
-  display: block;
-}
-
-/* 모바일 화면일 때 모달 이미지 크기 세부 조정 */
-@media (max-width: 480px) {
-  .modal-overlay img,
-  .modal-content img,
-  .gallery-modal img,
-  .modal img {
-    max-width: 92vw !important;  /* 모바일 화면 폭의 92% */
-    max-height: 70vh !important; /* 모바일 화면 높이의 70% (상하 여백 확보) */
-  }
+.modal-content img {
+    max-width: 90vw;
+    max-height: 80vh;
+    width: auto;
+    height: auto;
+    object-fit: contain; /* 원본 비율대로 크게 표시 */
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
 }
