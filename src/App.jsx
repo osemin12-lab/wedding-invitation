@@ -6,9 +6,7 @@ import Header from './components/Header'
 import Countdown from './components/Countdown'
 import Invitation from './components/Invitation'
 import Gallery from './components/Gallery'
-import Guestbook from './components/Guestbook'
 import AccountInfo from './components/AccountInfo'
-import GuestCheck from './components/GuestCheck'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -19,10 +17,8 @@ function App() {
       <Invitation/>
       <Countdown/>
       <Gallery/>
-      <Guestbook/>
       <AccountInfo/>
-      <GuestCheck/>
-    </div>
+      </div>
   )
 }
 
