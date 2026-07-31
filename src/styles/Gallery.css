@@ -1,40 +1,46 @@
-/* Gallery.css */
-.gallery-wrapper {
-  max-width: 700px;
-  margin: 0 auto;
-  padding: 0 16px;
-}
-
-.gallery-title {
-  text-align: center;
-  margin-bottom: 30px;
-  font-size: 24px;
-  font-weight: bold;
-}
-
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 8px; /* 모바일 대응을 위해 간격을 줄임 */
-  justify-items: center;
-}
-
-/* 이미지 모바일 사이즈 조절 */
+/* 1. 기본 갤러리 그리드 이미지 (클릭 전) */
 .gallery-grid img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* 비율 유지하며 정방향 채우기 */
-  border-radius: 8px; /* 통일감을 위한 살짝의 라운딩 (선택) */
+  object-fit: cover;
+  border-radius: 8px;
   cursor: pointer;
 }
 
-/* 모바일 전용 (화면 폭이 좁을 때) */
+/* 2. 모바일 기본 레이아웃 조정 */
 @media (max-width: 480px) {
   .gallery-wrapper {
     padding: 0 8px;
   }
-  
   .gallery-grid {
     gap: 6px;
+  }
+}
+
+/* --------------------------------------------------
+ * 3. [핵심] 사진 클릭 시 뜨는 원본 모달(팝업) 이미지 크기 조정
+ * -------------------------------------------------- */
+/* 모달 내부의 모든 이미지에 대해 기본적으로 화면을 넘지 않게 설정 */
+.modal-overlay img,
+.modal-content img,
+.gallery-modal img,
+.modal img {
+  max-width: 90vw !important;   /* 화면 너비의 최대 90%로 제한 */
+  max-height: 80vh !important;  /* 화면 높이의 최대 80%로 제한 (한눈에 들어옴) */
+  width: auto !important;       /* 원본 비율 유지 */
+  height: auto !important;      /* 원본 비율 유지 */
+  object-fit: contain !important; /* 이미지 잘림 없이 전체 표시 */
+  margin: auto;
+  display: block;
+}
+
+/* 모바일 화면일 때 모달 이미지 크기 세부 조정 */
+@media (max-width: 480px) {
+  .modal-overlay img,
+  .modal-content img,
+  .gallery-modal img,
+  .modal img {
+    max-width: 92vw !important;  /* 모바일 화면 폭의 92% */
+    max-height: 70vh !important; /* 모바일 화면 높이의 70% (상하 여백 확보) */
   }
 }
