@@ -5,12 +5,12 @@ import styled from '@emotion/styled';
 // 1. 오시는 길 데이터 (본인 정보에 맞게 수정하세요)
 // ==========================================
 const locationData = {
-  title: '아펠가모 공덕 라로브홀',
-  address: '서울 마포구 마포대로 92 효성해링턴스퀘어 B동 7층',
+  title: '창원 힐스카이 웨딩&컨벤션',
+  address: '창원시 마산회원구 마포대로 92 효성해링턴스퀘어 B동 7층',
   tel: '02-2197-0230',
   // Kakao 지도에 표시할 위도, 경도 좌표
-  lat: 37.5428, 
-  lng: 126.9515,
+  lat: 35.2190478, 
+  lng: 128.6014549,
   // 길찾기 버튼에 들어갈 각 지도 서비스 앱/웹 URL
   naverMapUrl: 'https://map.naver.com/', 
   kakaoMapUrl: 'https://map.kakao.com/',
@@ -22,7 +22,8 @@ const locationData = {
     },
     {
       title: '📍 주차안내',
-      desc: '👉🏻 건물 내 3-5층 2시간 무료주차 (안내데스크에서 주차권 수령)',
+      desc: '👉🏻 건물 내 무료주차 (안내데스크에서 주차권 수령)',
+      desc: '👉🏻 건물 내 무료주차 (안내데스크에서 주차권 수령)',
     },
   ],
 };
