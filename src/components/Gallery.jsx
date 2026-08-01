@@ -56,7 +56,7 @@ export default function Gallery() {
   };
 
   return (
-    <div className="gallery-container">
+    <div className="Gallery-container">
       {/* 썸네일 리스트 예시 */}
       <div className="thumbnail-list">
         {images.map((img, idx) => (
