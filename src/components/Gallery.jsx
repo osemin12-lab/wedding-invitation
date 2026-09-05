@@ -19,15 +19,31 @@ export default function Gallery() {
   const [dragOffset, setDragOffset] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
 
+  // 💡 터치/클릭 시 햅틱(진동) 피드백을 발생시키는 함수
+  const triggerHaptic = () => {
+    if (typeof window !== 'undefined' && window.navigator && window.navigator.vibrate) {
+      window.navigator.vibrate(12); // 12ms(0.012초) 동안 아주 짧고 기분 좋게 툭 쳐주는 진동
+    }
+  };
+
+  // 모달 열기
+  const handleOpenModal = (idx) => {
+    triggerHaptic(); // 사진 누를 때 진동 발생
+    setSelectedIndex(idx);
+    setDragOffset(0);
+  };
+
   // 이전/다음 버튼
   const handlePrev = (e) => {
     e.stopPropagation();
+    triggerHaptic(); // 버튼 누를 때 진동
     setSelectedIndex((prev) => (prev > 0 ? prev - 1 : images.length - 1));
     setDragOffset(0);
   };
 
   const handleNext = (e) => {
     e.stopPropagation();
+    triggerHaptic(); // 버튼 누를 때 진동
     setSelectedIndex((prev) => (prev < images.length - 1 ? prev + 1 : 0));
     setDragOffset(0);
   };
@@ -50,8 +66,10 @@ export default function Gallery() {
     setIsDragging(false);
 
     if (dragOffset < -50) {
+      triggerHaptic(); // 슬라이드 넘어갈 때 진동
       setSelectedIndex((prev) => (prev < images.length - 1 ? prev + 1 : prev));
     } else if (dragOffset > 50) {
+      triggerHaptic(); // 슬라이드 넘어갈 때 진동
       setSelectedIndex((prev) => (prev > 0 ? prev - 1 : prev));
     }
     setDragOffset(0);
@@ -61,7 +79,7 @@ export default function Gallery() {
     <div className="gallery-wrapper">
       <h2 className="gallery-title">GALLERY</h2>
 
-      {/* 💡 기존 요소를 없애지 않고 3x3 그리드로만 연결되도록 수정한 부분 */}
+      {/* 3x3 우물정자 그리드 */}
       <div className="gallery-grid">
         {images.map((img, idx) => (
           <img
@@ -69,17 +87,20 @@ export default function Gallery() {
             src={img}
             alt={`gallery-${idx + 1}`}
             className="gallery-thumb"
-            onClick={() => {
-              setSelectedIndex(idx);
-              setDragOffset(0);
-            }}
+            onClick={() => handleOpenModal(idx)}
           />
         ))}
       </div>
 
-      {/* 기존에 만드신 팝업 및 슬라이더 모달 (동일 유지) */}
+      {/* 클릭 시 슬라이드 모달 */}
       {selectedIndex !== null && (
-        <div className="modal-overlay" onClick={() => setSelectedIndex(null)}>
+        <div
+          className="modal-overlay"
+          onClick={() => {
+            triggerHaptic();
+            setSelectedIndex(null);
+          }}
+        >
           <div
             className="modal-content"
             onClick={(e) => e.stopPropagation()}
@@ -87,7 +108,6 @@ export default function Gallery() {
             onTouchMove={handleTouchMove}
             onTouchEnd={handleTouchEnd}
           >
-            {/* 전체 슬라이드 트랙 */}
             <div
               className="modal-track"
               style={{
@@ -102,7 +122,7 @@ export default function Gallery() {
               ))}
             </div>
 
-            {/* 좌우 버튼 */}
+            {/* 좌우 탐색 버튼 */}
             <button className="nav-btn prev" onClick={handlePrev}>
               &#10094;
             </button>
@@ -111,7 +131,13 @@ export default function Gallery() {
             </button>
 
             {/* 닫기 버튼 */}
-            <button className="close-btn" onClick={() => setSelectedIndex(null)}>
+            <button
+              className="close-btn"
+              onClick={() => {
+                triggerHaptic();
+                setSelectedIndex(null);
+              }}
+            >
               &times;
             </button>
           </div>
