@@ -1,87 +1,88 @@
 import React, { useState } from 'react';
 import '../styles/Gallery.css';
 
-// 샘플 이미지 배열 (기존 코드에 선언해 두신 images 변수를 사용하시면 됩니다)
-const images = [
-  '/image1.JPG',
-  '/image2.JPG',
-  '/image3.JPG',
-  '/image4.JPG',
-  '/image5.JPG',
-  '/image6.JPG',
-  '/image7.JPG',
-  '/image8.JPG',
-  '/image9.JPG',
-];
-
 export default function Gallery() {
+  const images = [
+    '/image1.JPG',
+    '/image2.JPG',
+    '/image3.JPG',
+    '/image4.JPG',
+    '/image5.JPG',
+    '/image6.JPG',
+    '/image7.JPG',
+    '/image8.JPG',
+    '/image9.JPG',
+  ];
+
   const [selectedIndex, setSelectedIndex] = useState(null);
+  const [touchStartX, setTouchStartX] = useState(0);
+  const [dragOffset, setDragOffset] = useState(0);
+  const [isDragging, setIsDragging] = useState(false);
 
-  // 모바일 터치 드래그 상태 관리
-  const [touchStart, setTouchStart] = useState(null);
-  const [dragOffset, setDragOffset] = useState(0); // 손가락 이동 거리(px)
-  const [isDragging, setIsDragging] = useState(false); // 터치 중 여부
-
-  const minSwipeDistance = 50; // 이 이상 스와이프해야 다음 사진으로 이동
-
-  const handlePrev = () => {
-    setSelectedIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+  // 이전/다음 버튼
+  const handlePrev = (e) => {
+    e.stopPropagation();
+    setSelectedIndex((prev) => (prev > 0 ? prev - 1 : images.length - 1));
+    setDragOffset(0);
   };
 
-  const handleNext = () => {
-    setSelectedIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+  const handleNext = (e) => {
+    e.stopPropagation();
+    setSelectedIndex((prev) => (prev < images.length - 1 ? prev + 1 : 0));
+    setDragOffset(0);
   };
 
-  // 1. 터치 시작
+  // 터치 스와이프 Event Handlers
   const handleTouchStart = (e) => {
     setIsDragging(true);
-    setTouchStart(e.targetTouches[0].clientX);
+    setTouchStartX(e.touches[0].clientX);
   };
 
-  // 2. 터치 이동 중 (손가락 위치 실시간 갱신)
   const handleTouchMove = (e) => {
-    if (!touchStart || !isDragging) return;
-    const currentX = e.targetTouches[0].clientX;
-    setDragOffset(currentX - touchStart);
+    if (!isDragging) return;
+    const currentX = e.touches[0].clientX;
+    const diff = currentX - touchStartX;
+    setDragOffset(diff);
   };
 
-  // 3. 터치 종료 (손가락을 뗐을 때)
   const handleTouchEnd = () => {
-    if (!touchStart) return;
+    if (!isDragging) return;
     setIsDragging(false);
 
-    // 일정 거리 이상 밀었을 때 이전/다음 사진으로 넘어감
-    if (dragOffset < -minSwipeDistance) {
-      handleNext();
-    } else if (dragOffset > minSwipeDistance) {
-      handlePrev();
+    if (dragOffset < -50) {
+      setSelectedIndex((prev) => (prev < images.length - 1 ? prev + 1 : prev));
+    } else if (dragOffset > 50) {
+      setSelectedIndex((prev) => (prev > 0 ? prev - 1 : prev));
     }
-
-    // 드래그 거리 초기화
     setDragOffset(0);
-    setTouchStart(null);
   };
 
   return (
-    <div className="Gallery-container">
-      {/* 썸네일 리스트 예시 */}
-      <div className="thumbnail-list">
+    <div className="gallery-wrapper">
+      <h2 className="gallery-title">GALLERY</h2>
+
+      {/* 💡 기존 요소를 없애지 않고 3x3 그리드로만 연결되도록 수정한 부분 */}
+      <div className="gallery-grid">
         {images.map((img, idx) => (
           <img
             key={idx}
             src={img}
-            alt={`thumb-${idx}`}
-            onClick={() => setSelectedIndex(idx)}
+            alt={`gallery-${idx + 1}`}
+            className="gallery-thumb"
+            onClick={() => {
+              setSelectedIndex(idx);
+              setDragOffset(0);
+            }}
           />
         ))}
       </div>
 
-      {/* 모달 팝업 영역 (사진 클릭 시 열림) */}
+      {/* 기존에 만드신 팝업 및 슬라이더 모달 (동일 유지) */}
       {selectedIndex !== null && (
         <div className="modal-overlay" onClick={() => setSelectedIndex(null)}>
           <div
             className="modal-content"
-            onClick={(e) => e.stopPropagation()} // 모달 내부 클릭 시 닫힘 방지
+            onClick={(e) => e.stopPropagation()}
             onTouchStart={handleTouchStart}
             onTouchMove={handleTouchMove}
             onTouchEnd={handleTouchEnd}
@@ -90,9 +91,7 @@ export default function Gallery() {
             <div
               className="modal-track"
               style={{
-                // 현재 인덱스 위치 + 손가락 드래그 거리만큼 실시간 이동
                 transform: `translateX(calc(-${selectedIndex * 100}% + ${dragOffset}px))`,
-                // 드래그 중엔 즉각 반응하도록 transition을 끄고, 손을 뗐을 때 부드럽게 0.3초간 이동
                 transition: isDragging ? 'none' : 'transform 0.3s ease-out',
               }}
             >
