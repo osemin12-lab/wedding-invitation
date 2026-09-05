@@ -3,8 +3,15 @@ import '../styles/Gallery.css';
 
 // 샘플 이미지 배열 (기존 코드에 선언해 두신 images 변수를 사용하시면 됩니다)
 const images = [
-  // '/assets/photo1.jpg',
-  // '/assets/photo2.jpg',
+  '/image1.JPG',
+  '/image2.JPG',
+  '/image3.JPG',
+  '/image4.JPG',
+  '/image5.JPG',
+  '/image6.JPG',
+  '/image7.JPG',
+  '/image8.JPG',
+  '/image9.JPG',
 ];
 
 export default function Gallery() {
