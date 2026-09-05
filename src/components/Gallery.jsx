@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Gallery.css';
+import '../styles/Gallery.css';
 
 // 샘플 이미지 배열 (기존 코드에 선언해 두신 images 변수를 사용하시면 됩니다)
 const images = [
