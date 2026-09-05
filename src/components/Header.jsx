@@ -10,7 +10,7 @@ function Header() {
       </div>
 
       <div className="header-image">
-  <video src="/main.mp4" autoPlay loop muted playsInline />
+  <video src="/main.MP4" autoPlay loop muted playsInline />
 </div>
 
       <div className="header-footer">

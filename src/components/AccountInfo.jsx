@@ -15,14 +15,14 @@ const accountData = [
       {
         name: '오상환',
         relation: '신랑 아버지',
-        bank: '신한은행',
-        account: '11111-1111-111',
+        bank: '수협은행',
+        account: '2020-5130-8348',
       },
       {
         name: '김계현',
         relation: '신랑 어머니',
-        bank: '은행명',
-        account: '11111-1111-111',
+        bank: '경남은행',
+        account: '511-22-0355008',
       },
     ],
   },
