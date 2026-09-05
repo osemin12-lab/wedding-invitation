@@ -111,3 +111,13 @@
   font-size: 14px;
   letter-spacing: 1px;
 }
+
+/* 💡 모달에서 이미지가 기기 화면보다 커지지 않도록 자동 조절 */
+.modal-slide img {
+  max-width: 90vw !important;  /* 기기 화면 너비의 최대 90% */
+  max-height: 80vh !important; /* 기기 화면 높이의 최대 80% */
+  width: auto !important;
+  height: auto !important;
+  object-fit: contain;        /* 비율 유지하며 화면 안에 쏙 들어가게 조절 */
+  border-radius: 8px;
+}
