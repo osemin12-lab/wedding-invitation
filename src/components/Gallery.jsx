@@ -19,16 +19,20 @@ export default function Gallery() {
   const [dragOffset, setDragOffset] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
 
-  // 💡 터치/클릭 시 햅틱(진동) 피드백을 발생시키는 함수
+  // 💡 모바일 에러 방지용 안전한 진동 함수
   const triggerHaptic = () => {
-    if (typeof window !== 'undefined' && window.navigator && window.navigator.vibrate) {
-      window.navigator.vibrate(12); // 12ms(0.012초) 동안 아주 짧고 기분 좋게 툭 쳐주는 진동
+    try {
+      if (typeof window !== 'undefined' && navigator && navigator.vibrate) {
+        navigator.vibrate(12);
+      }
+    } catch (e) {
+      // 진동을 지원하지 않는 기기/브라우저 오류 무시
     }
   };
 
   // 모달 열기
   const handleOpenModal = (idx) => {
-    triggerHaptic(); // 사진 누를 때 진동 발생
+    triggerHaptic();
     setSelectedIndex(idx);
     setDragOffset(0);
   };
@@ -36,14 +40,14 @@ export default function Gallery() {
   // 이전/다음 버튼
   const handlePrev = (e) => {
     e.stopPropagation();
-    triggerHaptic(); // 버튼 누를 때 진동
+    triggerHaptic();
     setSelectedIndex((prev) => (prev > 0 ? prev - 1 : images.length - 1));
     setDragOffset(0);
   };
 
   const handleNext = (e) => {
     e.stopPropagation();
-    triggerHaptic(); // 버튼 누를 때 진동
+    triggerHaptic();
     setSelectedIndex((prev) => (prev < images.length - 1 ? prev + 1 : 0));
     setDragOffset(0);
   };
@@ -66,10 +70,10 @@ export default function Gallery() {
     setIsDragging(false);
 
     if (dragOffset < -50) {
-      triggerHaptic(); // 슬라이드 넘어갈 때 진동
+      triggerHaptic();
       setSelectedIndex((prev) => (prev < images.length - 1 ? prev + 1 : prev));
     } else if (dragOffset > 50) {
-      triggerHaptic(); // 슬라이드 넘어갈 때 진동
+      triggerHaptic();
       setSelectedIndex((prev) => (prev > 0 ? prev - 1 : prev));
     }
     setDragOffset(0);
