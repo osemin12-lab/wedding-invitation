@@ -39,7 +39,7 @@ const accountData = [
         name: '이동술',
         relation: '신부 아버지',
         bank: '경남은행',
-        account: '622-22-0130767',
+        account: '578-22-0033279',
       },
       {
         name: '이귀자',
