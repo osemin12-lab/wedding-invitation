@@ -168,11 +168,11 @@
   color: #d88a75; /* 신부: 소프트 코랄/로즈 */
 }
 
-/* 답변 텍스트 스타일 */
+/* 답변 텍스트 스타일 (1번 방법 적용: 한 줄 유지) */
 .interview-text {
-  font-size: 0.92rem;
+  font-size: 0.88rem;
   line-height: 1.5;
   color: #444;
   text-align: right;
-  word-break: keep-all;
+  white-space: nowrap;
 }
