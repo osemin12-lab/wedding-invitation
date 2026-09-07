@@ -56,9 +56,9 @@ function Invitation() {
     
       <h2>INVITATION</h2>
       <p className="invitation-text">
-        벚꽃이 피고 새로운 계절을 준비하는,<br/><br/>
+        벚꽃이 피고 새로운 계절을 준비하는<br/><br/>
         <strong>2022년 4월,</strong><br/>
-        우리의 첫 만남이 따스한 인연이 되어,<br/><br/>
+        우리의 첫 만남이 따스한 인연이 되어<br/><br/>
         4년이 지난 오늘, <strong>2026년 10월 24일</strong>,<br/>
         그 인연을 영원한 사랑으로 맺으려 합니다.<br/><br/>
         소중한 여러분을 모시고<br/>
