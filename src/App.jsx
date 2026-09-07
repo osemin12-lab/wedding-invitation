@@ -30,13 +30,7 @@ function App() {
       {/* 3. 신랑·신부 계좌번호 (마음 전하실 곳) */}
       <AccountInfo />
 
-      {/* 4. 결혼식 일시 & 달력 (D-Day) - 카운트다운 숨김 */}
-      {/* <Countdown /> */}
-
-      {/* 5. 갤러리 */}
-      <Gallery />
-
-      {/* 6. 미니 인터뷰 (갤러리와 오시는 길 사이) */}
+      {/* 4. 미니 인터뷰 (마음 전하실 곳 바로 아래) */}
       <div className="interview-section">
         <div className="interview-divider" />
         <p className="interview-question">{interview.question}</p>
@@ -52,6 +46,12 @@ function App() {
           </div>
         </div>
       </div>
+
+      {/* 5. 결혼식 일시 & 달력 (D-Day) - 카운트다운 숨김 */}
+      {/* <Countdown /> */}
+
+      {/* 6. 갤러리 */}
+      <Gallery />
 
       {/* 7. 오시는 길 (지도) */}
       <Location />

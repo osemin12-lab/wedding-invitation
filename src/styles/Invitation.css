@@ -107,14 +107,15 @@
 }
 
 /* ==========================================
-   인터뷰 섹션 스타일 (양쪽 정렬 & 2줄 구조 적용)
+   인터뷰 섹션 스타일 (폰트 통일 & 줄바꿈 적용)
    ========================================== */
 
-/* 인터뷰 섹션 전체 레이아웃 */
+/* 인터뷰 섹션 전체 레이아웃 (폰트 통일 적용) */
 .interview-section {
   margin-top: 50px;
   padding: 20px 15px;
   text-align: center;
+  font-family: 'Noto Serif KR', serif;
 }
 
 /* 점선 구분선 */
@@ -168,11 +169,12 @@
   color: #d88a75; /* 신부: 소프트 코랄/로즈 */
 }
 
-/* 답변 텍스트 스타일 (1번 방법 적용: 한 줄 유지) */
+/* 답변 텍스트 스타일 (\n 줄바꿈 및 우측 정렬 적용) */
 .interview-text {
   font-size: 0.88rem;
   line-height: 1.5;
   color: #444;
   text-align: right;
-  white-space: nowrap;
+  white-space: pre-line;
+  word-break: keep-all;
 }
