@@ -107,21 +107,21 @@
 }
 
 /* ==========================================
-   인터뷰 섹션 스타일 (폰트/줄바꿈/여백 수정)
+   인터뷰 섹션 스타일 (줄바꿈 원천 차단 & 고딕 통일)
    ========================================== */
 
-/* 인터뷰 섹션 레이아웃 (여백 줄임 & 마음전하실곳과 같은 고딕 폰트 적용) */
+/* 인터뷰 섹션 전체 레이아웃 (여백 축소 & 마음전하실곳과 폰트 통일) */
 .interview-section {
-  margin-top: 25px; /* 기존 50px -> 25px로 대폭 줄여 마음전하실곳과의 간격 축소 */
+  margin-top: 25px;
   padding: 10px 15px 20px 15px;
   text-align: center;
-  font-family: inherit; /* 상위 기본 산세리프(고딕) 폰트를 상속받아 통일 */
+  font-family: inherit;
 }
 
 /* 점선 구분선 */
 .interview-divider {
   border-top: 1.5px dashed #e2dcd5;
-  margin: 0 auto 20px auto; /* 상단 여백 제거 */
+  margin: 0 auto 20px auto;
   width: 90%;
 }
 
@@ -133,16 +133,17 @@
   margin-bottom: 20px;
 }
 
-/* 답변 컨테이너 (너비를 400px로 확정하여 줄바꿈 방지) */
+/* 답변 컨테이너 */
 .interview-content {
   display: flex;
   flex-direction: column;
   gap: 14px;
-  max-width: 400px; /* 공간 확보 */
+  width: 100%;
+  max-width: 400px;
   margin: 0 auto;
 }
 
-/* 2줄 양쪽 정렬 행 */
+/* 2줄 행 박스 */
 .interview-row {
   display: flex;
   justify-content: space-between;
@@ -153,12 +154,12 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
 }
 
-/* 신랑/신부 라벨 */
+/* 신랑/신부 이름 */
 .interview-name {
   font-weight: 700;
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   white-space: nowrap;
-  margin-right: 12px;
+  margin-right: 8px;
 }
 
 .groom-name {
@@ -169,12 +170,12 @@
   color: #d88a75;
 }
 
-/* 답변 텍스트 스타일 (폰트 0.85rem 축소 & 줄바꿈 설정) */
+/* 답변 텍스트 (자동 줄바꿈 끄고 \n 줄바꿈만 수행) */
 .interview-text {
-  font-size: 0.85rem;
-  line-height: 1.5;
+  font-size: 0.82rem;
+  line-height: 1.6;
   color: #444;
   text-align: right;
-  white-space: pre-line;
+  white-space: pre;
   word-break: keep-all;
 }
