@@ -8,7 +8,8 @@ import Gallery from './components/Gallery'
 import Location from './components/Location'
 import Bgmplayer from './Bgmplayer'
 
-// 인터뷰 데이터
+function App() {
+  // 인터뷰 데이터
   const interview = {
     question: "Q. 신랑 신부는 어떤 사람인가요?",
     groomAnswer: "제 신부는,\n배려심이 깊고 저를 늘 웃게 만드는 사람입니다.",
@@ -29,8 +30,8 @@ import Bgmplayer from './Bgmplayer'
       {/* 3. 신랑·신부 계좌번호 (마음 전하실 곳) */}
       <AccountInfo />
 
-      {/* 4. 결혼식 일시 & 달력 (D-Day) */}
-      <Countdown />
+      {/* 4. 결혼식 일시 & 달력 (D-Day) - 카운트다운 숨김 */}
+      {/* <Countdown /> */}
 
       {/* 5. 갤러리 */}
       <Gallery />
