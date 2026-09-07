@@ -45,11 +45,11 @@ function Invitation() {
     phone: '010-6541-6152'
   }
 
-  // 인터뷰 데이터
+  // 인터뷰 데이터 (깔끔한 2줄 및 양쪽 정렬 표현을 위해 줄바꿈 제거)
   const interview = {
     question: "Q. 배우자는 어떤 사람인가요?",
-    groomAnswer: "제 신부는,\n배려심이 깊고\n저의 세상을 환하게 만들어주는\n소중한 사람입니다.",
-    brideAnswer: "제 신랑은,\n묵묵히 제 곁을 지켜주며\n어디서나 든든한 힘이 되어주는\n고마운 사람입니다."
+    groomAnswer: "배려심이 깊고 저를 늘 웃게 만드는 사람입니다.",
+    brideAnswer: "다정하고 제가 웃을 때 가장 행복해하는 사람입니다."
   }
 
   return (
@@ -99,29 +99,24 @@ function Invitation() {
         </div>
       </div>
 
-      {/* 미니 인터뷰 섹션 */}
+      {/* 미니 인터뷰 섹션 (달력 하단, 오시는 길 상단 위치) */}
       <div className="interview-section">
         <h3 className="interview-title">인터뷰</h3>
-        
-        {/* 상단 점선 구분선 */}
         <div className="interview-divider" />
-
         <p className="interview-question">{interview.question}</p>
            
         <div className="interview-content">
-          <div className="interview-item">
-            <p className="interview-answer">
-              <span className="interview-name groom-name">세민</span> : {interview.groomAnswer}
-            </p>
+          <div className="interview-row">
+            <span className="interview-name groom-name">신랑 세민</span>
+            <span className="interview-text">{interview.groomAnswer}</span>
           </div>
-          
-          <div className="interview-item">
-            <p className="interview-answer">
-              <span className="interview-name bride-name">지현</span> : {interview.brideAnswer}
-            </p>
+          <div className="interview-row">
+            <span className="interview-name bride-name">신부 지현</span>
+            <span className="interview-text">{interview.brideAnswer}</span>
           </div>
         </div>
       </div>
+
     </div>
   )
 }
