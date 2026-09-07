@@ -6,7 +6,8 @@ import styled from '@emotion/styled';
 // ==========================================
 const locationData = {
   title: '창원 힐스카이 웨딩&컨벤션',
-  address: '경상남도 창원시 마산회원구 봉암동 133, 힐스카이 웨딩 & 컨벤션 10층 힐그랜드',
+  hall: '힐스카이 웨딩 & 컨벤션 10층 힐그랜드',
+  address: '경상남도 창원시 마산회원구 봉암동 133',
   tel: '055-291-9500',
   // 메인 중심 좌표 (웨딩홀)
   lat: 35.2190478,
@@ -97,6 +98,7 @@ export default function Location() {
       {/* 웨딩홀 정보 */}
       <InfoSection>
         <VenueTitle>{locationData.title}</VenueTitle>
+        <HallText>{locationData.hall}</HallText>
         <AddressText>{locationData.address}</AddressText>
         <TelText>TEL. {locationData.tel}</TelText>
       </InfoSection>
@@ -158,7 +160,14 @@ const VenueTitle = styled.h3`
   font-size: 1.1rem;
   font-weight: 600;
   color: #1e293b;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
+`;
+
+const HallText = styled.p`
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #334155;
+  margin-bottom: 4px;
 `;
 
 const AddressText = styled.p`
