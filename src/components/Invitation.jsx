@@ -45,6 +45,13 @@ function Invitation() {
     phone: '010-6541-6152'
   }
 
+  // 인터뷰 데이터
+  const interview = {
+    question: "Q. 서로에게 어떤 사람인가요?",
+    groomAnswer: "제 신부는, 배려심이 깊고\n저의 세상을 환하게 만들어주는 소중한 사람입니다.",
+    brideAnswer: "제 신랑은 묵묵히 제 곁을 지켜주며\n어디서나 든든한 힘이 되어주는 고마운 사람입니다."
+  }
+
   return (
     <div
       className={`invitation-card fade-up ${isVisible ? 'show' : ''}`}
@@ -89,6 +96,28 @@ function Invitation() {
               {day}
             </div>
           ))}
+        </div>
+      </div>
+
+      {/* 미니 인터뷰 섹션 */}
+      <div className="interview-section">
+        <h3 className="interview-title">INTERVIEW</h3>
+        <p className="interview-question">{interview.question}</p>
+        
+        <div className="interview-content">
+          <div className="interview-item">
+            <p className="interview-answer">
+              <span className="interview-name groom-name">세민 : </span>
+              {interview.groomAnswer}
+            </p>
+          </div>
+          
+          <div className="interview-item">
+            <p className="interview-answer">
+              <span className="interview-name bride-name">지현 : </span>
+              {interview.brideAnswer}
+            </p>
+          </div>
         </div>
       </div>
     </div>
