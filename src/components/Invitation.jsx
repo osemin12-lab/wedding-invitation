@@ -107,12 +107,7 @@ function Invitation() {
         <div className="interview-divider" />
 
         <p className="interview-question">{interview.question}</p>
-
-        {/* 인터뷰 커플 이미지 (이미지가 있을 경우 추가) */}
-        <div className="interview-image-wrapper">
-          <img src="/gallery-1.jpg" alt="커플 사진" className="interview-image" />
-        </div>
-        
+           
         <div className="interview-content">
           <div className="interview-item">
             <p className="interview-answer">
