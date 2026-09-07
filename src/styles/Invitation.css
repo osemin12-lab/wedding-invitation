@@ -117,15 +117,6 @@
   text-align: center;
 }
 
-/* 제목: 한글 '인터뷰' */
-.interview-title {
-  font-size: 1.35rem;
-  font-weight: 600;
-  color: #333;
-  margin-bottom: 16px;
-  letter-spacing: -0.5px;
-}
-
 /* 점선 구분선 */
 .interview-divider {
   border-top: 1.5px dashed #e2dcd5;

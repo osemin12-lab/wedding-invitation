@@ -38,7 +38,6 @@ function App() {
 
       {/* 6. 미니 인터뷰 (갤러리와 오시는 길 사이) */}
       <div className="interview-section">
-        <h3 className="interview-title">인터뷰</h3>
         <div className="interview-divider" />
         <p className="interview-question">{interview.question}</p>
            
