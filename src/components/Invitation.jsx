@@ -47,9 +47,9 @@ function Invitation() {
 
   // 인터뷰 데이터
   const interview = {
-    question: "Q. 서로에게 어떤 사람인가요?",
-    groomAnswer: "제 신부는, 배려심이 깊고\n저의 세상을 환하게 만들어주는 소중한 사람입니다.",
-    brideAnswer: "제 신랑은 묵묵히 제 곁을 지켜주며\n어디서나 든든한 힘이 되어주는 고마운 사람입니다."
+    question: "Q. 배우자는 어떤 사람인가요?",
+    groomAnswer: "제 신부는,\n배려심이 깊고\n저의 세상을 환하게 만들어주는\n소중한 사람입니다.",
+    brideAnswer: "제 신랑은,\n묵묵히 제 곁을 지켜주며\n어디서나 든든한 힘이 되어주는\n고마운 사람입니다."
   }
 
   return (
@@ -101,21 +101,28 @@ function Invitation() {
 
       {/* 미니 인터뷰 섹션 */}
       <div className="interview-section">
-        <h3 className="interview-title">INTERVIEW</h3>
+        <h3 className="interview-title">인터뷰</h3>
+        
+        {/* 상단 점선 구분선 */}
+        <div className="interview-divider" />
+
         <p className="interview-question">{interview.question}</p>
+
+        {/* 인터뷰 커플 이미지 (이미지가 있을 경우 추가) */}
+        <div className="interview-image-wrapper">
+          <img src="/gallery-1.jpg" alt="커플 사진" className="interview-image" />
+        </div>
         
         <div className="interview-content">
           <div className="interview-item">
             <p className="interview-answer">
-              <span className="interview-name groom-name">세민 : </span>
-              {interview.groomAnswer}
+              <span className="interview-name groom-name">세민</span> : {interview.groomAnswer}
             </p>
           </div>
           
           <div className="interview-item">
             <p className="interview-answer">
-              <span className="interview-name bride-name">지현 : </span>
-              {interview.brideAnswer}
+              <span className="interview-name bride-name">지현</span> : {interview.brideAnswer}
             </p>
           </div>
         </div>

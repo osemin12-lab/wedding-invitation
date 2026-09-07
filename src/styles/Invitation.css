@@ -105,3 +105,91 @@
   transform: translateY(0);
   margin-top: 40px;
 }
+
+/* ==========================================
+   인터뷰 섹션 스타일
+   ========================================== */
+
+/* 인터뷰 섹션 전체 레이아웃 */
+.interview-section {
+  margin-top: 40px;
+  padding: 20px 10px;
+  text-align: center;
+}
+
+/* 제목: 한글 '인터뷰' */
+.interview-title {
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 16px;
+  letter-spacing: -0.5px;
+}
+
+/* 점선 구분선 */
+.interview-divider {
+  border-top: 1.5px dashed #e2dcd5;
+  margin: 15px auto 25px auto;
+  width: 90%;
+}
+
+/* 질문 문구 스타일 */
+.interview-question {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: #a88363; /* 따뜻한 브라운 톤 */
+  margin-bottom: 24px;
+}
+
+/* 인터뷰 메인 이미지 (선택) */
+.interview-image-wrapper {
+  margin: 0 auto 28px auto;
+  max-width: 90%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.interview-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* 답변 컨테이너 */
+.interview-content {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.interview-item {
+  background-color: rgba(255, 255, 255, 0.6);
+  padding: 16px;
+  border-radius: 10px;
+}
+
+/* 답변 텍스트 스타일 */
+.interview-answer {
+  font-size: 0.98rem;
+  line-height: 1.8;
+  color: #444;
+  margin: 0;
+  white-space: pre-line; /* 줄바꿈 \n 반영 */
+  word-break: keep-all;
+}
+
+/* 신랑/신부 이름 색상 강조 */
+.interview-name {
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.groom-name {
+  color: #5b7b9a; /* 신랑: 소프트 블루 */
+}
+
+.bride-name {
+  color: #d88a75; /* 신부: 소프트 코랄/로즈 */
+}
