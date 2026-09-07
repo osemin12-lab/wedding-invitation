@@ -75,6 +75,7 @@ function Invitation() {
         <div className="contact">
           <p>이동술 · 이귀자 <span>차녀</span> {bride.name}</p>
           <a href={`tel:${bride.phone}`}><FaPhone /></a>
+        </div>
       </div>
 
       <div className="calendar">
