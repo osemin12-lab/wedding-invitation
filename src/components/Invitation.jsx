@@ -1,5 +1,5 @@
 import '../styles/Invitation.css'
-import { FaPhone, FaCommentDots } from 'react-icons/fa'
+import { FaPhone } from 'react-icons/fa'
 import { useEffect, useRef, useState } from 'react'
 
 function Invitation() {
@@ -37,14 +37,12 @@ function Invitation() {
 
   const groom = {
     name: '오세민',
-    phone: '010-8633-5283',
-    kakao: 'https://open.kakao.com/o/groom-link'
+    phone: '010-8633-5283'
   }
 
   const bride = {
     name: '이지현',
-    phone: '010-6541-6152',
-    kakao: 'https://open.kakao.com/o/bride-link'
+    phone: '010-6541-6152'
   }
 
   return (
@@ -73,13 +71,10 @@ function Invitation() {
         <div className="contact">
           <p>오상환 · 김계현 <span>장남</span> {groom.name}</p>
           <a href={`tel:${groom.phone}`}><FaPhone /></a>
-          <a href={groom.kakao} target="_blank" rel="noopener noreferrer"><FaCommentDots /></a>
         </div>
         <div className="contact">
           <p>이동술 · 이귀자 <span>차녀</span> {bride.name}</p>
           <a href={`tel:${bride.phone}`}><FaPhone /></a>
-          <a href={bride.kakao} target="_blank" rel="noopener noreferrer"><FaCommentDots /></a>
-        </div>
       </div>
 
       <div className="calendar">
