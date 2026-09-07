@@ -78,7 +78,7 @@
 /* ---------------------------------- */
 .divider {
   width: 1px;             /* 막대 두께 */
-  height: 24px;           /* 막대 길이 */
+  height: 40px;           /* 막대 길이 */
   background-color: #888; /* 막대 색상 */
   margin: 12px 0;         /* 위아래 간격 */
 }
