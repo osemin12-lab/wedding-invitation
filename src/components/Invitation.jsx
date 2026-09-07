@@ -1,8 +1,6 @@
 import '../styles/Invitation.css'
 import { FaPhone } from 'react-icons/fa'
 import { useEffect, useRef, useState } from 'react'
-import Gallery from './Gallery' // Gallery 컴포넌트 임포트 (경로 확인 필요)
-import Location from './Location' // Location 컴포넌트가 있다면 임포트
 
 function Invitation() {
   const cardRef = useRef(null)
@@ -45,13 +43,6 @@ function Invitation() {
   const bride = {
     name: '이지현',
     phone: '010-6541-6152'
-  }
-
-  // 인터뷰 데이터 (깔끔한 문장 구성)
-  const interview = {
-    question: "Q. 신랑 신부는 어떤 사람인가요?",
-    groomAnswer: "배려심이 깊고 저를 늘 웃게 만드는 사람입니다.",
-    brideAnswer: "다정하고 제가 웃을 때 가장 행복해하는 사람입니다."
   }
 
   return (
@@ -100,30 +91,6 @@ function Invitation() {
           ))}
         </div>
       </div>
-
-      {/* 갤러리 섹션 */}
-      <Gallery />
-
-      {/* 갤러리와 오시는길 사이 인터뷰 섹션 */}
-      <div className="interview-section">
-        <h3 className="interview-title">인터뷰</h3>
-        <div className="interview-divider" />
-        <p className="interview-question">{interview.question}</p>
-           
-        <div className="interview-content">
-          <div className="interview-row">
-            <span className="interview-name groom-name">신랑 세민</span>
-            <span className="interview-text">{interview.groomAnswer}</span>
-          </div>
-          <div className="interview-row">
-            <span className="interview-name bride-name">신부 지현</span>
-            <span className="interview-text">{interview.brideAnswer}</span>
-          </div>
-        </div>
-      </div>
-
-      {/* 오시는 길 섹션 */}
-      <Location />
     </div>
   )
 }
