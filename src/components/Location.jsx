@@ -6,7 +6,7 @@ import styled from '@emotion/styled';
 // ==========================================
 const locationData = {
   title: '창원 힐스카이 웨딩&컨벤션',
-  hall: '힐스카이 웨딩 & 컨벤션 10층 힐그랜드',
+  hall: '10층 힐그랜드',
   address: '경상남도 창원시 마산회원구 봉암동 133',
   tel: '055-291-9500',
   // 메인 중심 좌표 (웨딩홀)
@@ -95,11 +95,11 @@ export default function Location() {
         markers={locationData.markers} 
       />
 
-      {/* 웨딩홀 정보 */}
+      {/* 웨딩홀 정보 (주소 <-> 홀 순서 변경) */}
       <InfoSection>
         <VenueTitle>{locationData.title}</VenueTitle>
-        <HallText>{locationData.hall}</HallText>
         <AddressText>{locationData.address}</AddressText>
+        <HallText>{locationData.hall}</HallText>
         <TelText>TEL. {locationData.tel}</TelText>
       </InfoSection>
 
