@@ -1,60 +1,60 @@
+.header-content {
+  margin-bottom: 10px;
+  margin-top: 50px;
+  /* 세로 막대와 문구를 중앙으로 수직 정렬하기 위한 코드 추가 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-  
-  .header-content {
-    margin-bottom: 10px;
-    margin-top: 50px;
-  }
+#root {
+  margin-top: -18px;
+}
 
-  #root {
-    margin-top: -18px;
-  }
-  
-  .date-line {
-    font-size: 20px;
-    letter-spacing: 4px;
-    margin-bottom: -20px;
-  }
-  
-  .day {
-    font-size: 30px;
-    letter-spacing: 8px;
-    font-weight: bold;
-  }
-  
-  .datetime {
-    font-size: 16px;
-    color: #555;
-    margin-bottom: 32px;
-    margin-top: -25px;
-  }
-  
-  .header-image img {
-    width: 100%;
-    /* max-width: 500px; */
-    height: auto;
-    display: block;
-    /* margin-left: -32px; */
-    margin-top: 30px;
-  }
+.date-line {
+  font-size: 20px;
+  letter-spacing: 4px;
+  margin-bottom: -20px;
+}
 
-  .header-footer {
-    margin-top: 10px;
-  }
+.day {
+  font-size: 30px;
+  letter-spacing: 8px;
+  font-weight: bold;
+}
 
-  .name {
-    margin-top: 23px;
-    font-size: 22px;
-    color: #222;
-    font-weight: 200;
-  }
+.datetime {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 16px; /* 여백 조절 */
+  margin-top: -25px;
+}
 
-  .holl {
-    margin-top: -7px;
-    font-size: 16px;
-    color: #222;
-  }
-  
-  /* 비디오 및 감싸는 컨테이너 모바일 맞춤 설정 */
+.header-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-top: 30px;
+}
+
+.header-footer {
+  margin-top: 10px;
+}
+
+.name {
+  margin-top: 23px;
+  font-size: 22px;
+  color: #222;
+  font-weight: 200;
+}
+
+.holl {
+  margin-top: -7px;
+  font-size: 16px;
+  color: #222;
+}
+
+/* 비디오 및 감싸는 컨테이너 모바일 맞춤 설정 */
 .header-image {
   width: 100%;
   max-width: 100%;
@@ -70,4 +70,21 @@
   height: auto;
   object-fit: cover;
   display: block;
+}
+
+/* ---------------------------------- */
+/* ✨ 세로 구분선 및 문구 스타일 추가 ✨ */
+/* ---------------------------------- */
+.divider {
+  width: 1px;             /* 막대 두께 */
+  height: 24px;           /* 막대 길이 */
+  background-color: #888; /* 막대 색상 */
+  margin: 12px 0;         /* 위아래 간격 */
+}
+
+.sub-text {
+  font-size: 18px;
+  letter-spacing: 3px;
+  color: #333;
+  margin: 0;
 }
