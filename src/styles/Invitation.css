@@ -107,49 +107,49 @@
 }
 
 /* ==========================================
-   인터뷰 섹션 스타일 (폰트 통일 & 줄바꿈 적용)
+   인터뷰 섹션 스타일 (폰트/줄바꿈/여백 수정)
    ========================================== */
 
-/* 인터뷰 섹션 전체 레이아웃 (폰트 통일 적용) */
+/* 인터뷰 섹션 레이아웃 (여백 줄임 & 마음전하실곳과 같은 고딕 폰트 적용) */
 .interview-section {
-  margin-top: 50px;
-  padding: 20px 15px;
+  margin-top: 25px; /* 기존 50px -> 25px로 대폭 줄여 마음전하실곳과의 간격 축소 */
+  padding: 10px 15px 20px 15px;
   text-align: center;
-  font-family: 'Noto Serif KR', serif;
+  font-family: inherit; /* 상위 기본 산세리프(고딕) 폰트를 상속받아 통일 */
 }
 
 /* 점선 구분선 */
 .interview-divider {
   border-top: 1.5px dashed #e2dcd5;
-  margin: 15px auto 25px auto;
+  margin: 0 auto 20px auto; /* 상단 여백 제거 */
   width: 90%;
 }
 
 /* 질문 문구 스타일 */
 .interview-question {
   font-size: 1.05rem;
-  font-weight: 500;
-  color: #a88363; /* 따뜻한 브라운 톤 */
-  margin-bottom: 24px;
+  font-weight: 600;
+  color: #a88363;
+  margin-bottom: 20px;
 }
 
-/* 답변 컨테이너 */
+/* 답변 컨테이너 (너비를 400px로 확정하여 줄바꿈 방지) */
 .interview-content {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  max-width: 360px;
+  gap: 14px;
+  max-width: 400px; /* 공간 확보 */
   margin: 0 auto;
 }
 
 /* 2줄 양쪽 정렬 행 */
 .interview-row {
   display: flex;
-  justify-content: space-between; /* 좌우 양쪽 정렬 */
+  justify-content: space-between;
   align-items: center;
-  background-color: rgba(255, 255, 255, 0.6);
-  padding: 14px 18px;
-  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 14px 16px;
+  border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
 }
 
@@ -162,16 +162,16 @@
 }
 
 .groom-name {
-  color: #5b7b9a; /* 신랑: 소프트 블루 */
+  color: #5b7b9a;
 }
 
 .bride-name {
-  color: #d88a75; /* 신부: 소프트 코랄/로즈 */
+  color: #d88a75;
 }
 
-/* 답변 텍스트 스타일 (\n 줄바꿈 및 우측 정렬 적용) */
+/* 답변 텍스트 스타일 (폰트 0.85rem 축소 & 줄바꿈 설정) */
 .interview-text {
-  font-size: 0.88rem;
+  font-size: 0.85rem;
   line-height: 1.5;
   color: #444;
   text-align: right;
