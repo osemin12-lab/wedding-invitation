@@ -8,6 +8,10 @@ import Gallery from './components/Gallery'
 import Location from './components/Location'
 import Bgmplayer from './Bgmplayer'
 
+// 이미지 import (assets 폴더 경로가 맞는지 확인해 주세요)
+import brideImg from './assets/image10.JPG' // 신부 사진
+import groomImg from './assets/image11.JPG' // 신랑 사진
+
 function App() {
   // 인터뷰 데이터
   const interview = {
@@ -36,13 +40,26 @@ function App() {
         <p className="interview-question">{interview.question}</p>
            
         <div className="interview-content">
+          {/* 신랑 세민 답변 카드 (위에 신부 사진 image10.JPG) */}
           <div className="interview-row">
-            <span className="interview-name groom-name">신랑 세민</span>
-            <span className="interview-text">{interview.groomAnswer}</span>
+            <div className="interview-img-box">
+              <img src={brideImg} alt="신부 사진" className="interview-card-img" />
+            </div>
+            <div className="interview-text-box">
+              <span className="interview-name groom-name">신랑 세민</span>
+              <span className="interview-text">{interview.groomAnswer}</span>
+            </div>
           </div>
+
+          {/* 신부 지현 답변 카드 (위에 신랑 사진 image11.JPG) */}
           <div className="interview-row">
-            <span className="interview-name bride-name">신부 지현</span>
-            <span className="interview-text">{interview.brideAnswer}</span>
+            <div className="interview-img-box">
+              <img src={groomImg} alt="신랑 사진" className="interview-card-img" />
+            </div>
+            <div className="interview-text-box">
+              <span className="interview-name bride-name">신부 지현</span>
+              <span className="interview-text">{interview.brideAnswer}</span>
+            </div>
           </div>
         </div>
       </div>

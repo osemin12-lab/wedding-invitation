@@ -1,120 +1,79 @@
-#root {
-  margin: 0 auto;
-  text-align: center;
-}
+import React from 'react'
+import './App.css'
+import Header from './components/Header'
+import Invitation from './components/Invitation'
+import AccountInfo from './components/AccountInfo'
+import Countdown from './components/Countdown'
+import Gallery from './components/Gallery'
+import Location from './components/Location'
+import Bgmplayer from './Bgmplayer'
 
-/* App.css */
-body {
-  margin: 0;
-  overflow-x: hidden; /* 가로 스크롤 방지 */
-}
+// 이미지 import (프로젝트 경로에 맞게 확인해 주세요)
+import brideImg from './assets/image10.JPG' // 신부 사진
+import groomImg from './assets/image11.JPG' // 신랑 사진
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+function App() {
+  // 인터뷰 데이터
+  const interview = {
+    question: "Q. 신랑 신부는 어떤 사람인가요?",
+    groomAnswer: "제 신부는,\n배려심이 깊고 저를 늘 웃게 만드는 사람입니다.",
+    brideAnswer: "제 신랑은,\n다정하고 제가 웃을 때 가장 행복해하는 사람입니다."
   }
-  to {
-    transform: rotate(360deg);
-  }
+
+  return (
+    <div>
+      {/* 배경음악 플레이어 */}
+      <Bgmplayer />
+
+      {/* 1. 메인 화면 (커버) */}
+      <Header />
+
+      {/* 2. 초대글 */}
+      <Invitation />
+
+      {/* 3. 신랑·신부 계좌번호 (마음 전하실 곳) */}
+      <AccountInfo />
+
+      {/* 4. 미니 인터뷰 (마음 전하실 곳 바로 아래) */}
+      <div className="interview-section">
+        <div className="interview-divider" />
+        <p className="interview-question">{interview.question}</p>
+           
+        <div className="interview-content">
+          {/* 신랑 세민 답변 카드 (상단 신부 사진 image10.JPG) */}
+          <div className="interview-row">
+            <div className="interview-img-box">
+              <img src={brideImg} alt="신부 사진" className="interview-card-img" />
+            </div>
+            <div className="interview-text-box">
+              <span className="interview-name groom-name">신랑 세민</span>
+              <span className="interview-text">{interview.groomAnswer}</span>
+            </div>
+          </div>
+
+          {/* 신부 지현 답변 카드 (상단 신랑 사진 image11.JPG) */}
+          <div className="interview-row">
+            <div className="interview-img-box">
+              <img src={groomImg} alt="신랑 사진" className="interview-card-img" />
+            </div>
+            <div className="interview-text-box">
+              <span className="interview-name bride-name">신부 지현</span>
+              <span className="interview-text">{interview.brideAnswer}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* 5. 결혼식 일시 & 달력 (D-Day) - 카운트다운 숨김 */}
+      {/* <Countdown /> */}
+
+      {/* 6. 갤러리 */}
+      <Gallery />
+
+      {/* 7. 오시는 길 (지도) */}
+      <Location />
+    </div>
+  )
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
-
-/* ==========================================
-   인터뷰 섹션 스타일 (카드 이탈 완벽 방지)
-   ========================================== */
-
-.interview-section {
-  padding: 30px 15px;
-  max-width: 450px;
-  margin: 0 auto;
-  box-sizing: border-box;
-}
-
-.interview-divider {
-  border-top: 1px dashed #e0e0e0;
-  margin-bottom: 30px;
-}
-
-/* 1. 질문 스타일 */
-.interview-section .interview-question,
-p.interview-question {
-  color: #222222 !important;
-  font-size: 1.25rem !important;
-  font-weight: bold !important;
-  text-align: center !important;
-  margin-bottom: 24px !important;
-}
-
-.interview-content {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-/* 2. 각 흰색 카드 박스 레이아웃 */
-.interview-row {
-  display: flex;
-  align-items: flex-start;
-  text-align: left;
-  background-color: #ffffff;
-  padding: 16px 14px;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-  box-sizing: border-box;
-  width: 100%;
-}
-
-/* 3. '신랑 세민', '신부 지현' 이름 폭 조정 */
-.interview-name {
-  width: 75px !important;
-  min-width: 75px !important;
-  flex-shrink: 0 !important;
-  font-weight: bold !important;
-}
-
-/* 이름 색상 */
-.groom-name {
-  color: #556080 !important;
-}
-
-.bride-name {
-  color: #d17b7b !important;
-}
-
-/* 4. 답변 텍스트 영역 (강제 줄바꿈 및 넘침 방지) */
-.interview-text {
-  flex: 1;
-  white-space: pre-line;
-  line-height: 1.5;
-  color: #333333;
-  word-break: break-word !important; /* 긴 단어/기호도 박스에 맞춰 자동으로 다음 줄로 넘김 */
-  overflow-wrap: anywhere !important;
-}
+export default App
