@@ -46,7 +46,7 @@ body {
 }
 
 /* ==========================================
-   인터뷰 섹션 스타일 (우선순위 강제 적용)
+   인터뷰 섹션 스타일 (질문 색상 통일 & 카드 이탈 방지)
    ========================================== */
 
 .interview-section {
@@ -63,7 +63,7 @@ body {
 /* 1. 질문 스타일: '마음 전하실 곳' / '갤러리'와 동일한 검정계열(#222222) 적용 */
 .interview-section .interview-question,
 p.interview-question {
-  color: #222222 !important; /* !important로 이전 색상 오버라이드 */
+  color: #222222 !important;
   font-size: 1.25rem !important;
   font-weight: bold !important;
   text-align: center !important;
@@ -73,23 +73,24 @@ p.interview-question {
 .interview-content {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  background-color: #f9fbfd;
-  padding: 20px;
-  border-radius: 12px;
+  gap: 12px;
 }
 
-/* 2. 행 레이아웃 및 상단 정렬 */
+/* 2. 각 흰색 카드 박스 레이아웃 */
 .interview-row {
   display: flex;
   align-items: flex-start;
   text-align: left;
+  background-color: #ffffff;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
-/* 3. '신랑 세민', '신부 지현' 고정 너비 설정 */
+/* 3. '신랑 세민', '신부 지현' 이름 폭 축소 (80px로 수정하여 오른쪽 텍스트 넘침 방지) */
 .interview-name {
-  width: 95px !important;
-  min-width: 95px !important;
+  width: 80px !important;
+  min-width: 80px !important;
   flex-shrink: 0 !important;
   font-weight: bold !important;
 }
@@ -103,10 +104,11 @@ p.interview-question {
   color: #d17b7b !important;
 }
 
-/* 4. 답변 텍스트 스타일 */
+/* 4. 답변 텍스트 영역 */
 .interview-text {
   flex: 1;
   white-space: pre-line;
-  line-height: 1.6;
+  line-height: 1.5;
   color: #333333;
+  word-break: keep-all; /* 단어 단위 줄바꿈으로 깔끔하게 유지 */
 }
