@@ -9,7 +9,6 @@ body {
   overflow-x: hidden; /* 가로 스크롤 방지 */
 }
 
-
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -44,4 +43,69 @@ body {
 
 .read-the-docs {
   color: #888;
+}
+
+/* ==========================================
+   인터뷰 섹션 스타일 (질문 색상 통일 & 답변 정렬)
+   ========================================== */
+
+.interview-section {
+  padding: 30px 20px;
+  max-width: 450px;
+  margin: 0 auto;
+}
+
+.interview-divider {
+  border-top: 1px dashed #e0e0e0;
+  margin-bottom: 30px;
+}
+
+/* 1. 질문 스타일: '마음 전하실 곳' / '갤러리'와 동일한 검정계열(#222222)로 통일 */
+.interview-question {
+  color: #222222;
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.interview-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background-color: #f9fbfd; /* 깔끔한 배경 박스 */
+  padding: 20px;
+  border-radius: 12px;
+}
+
+/* 2. 행 레이아웃 및 상단 정렬 */
+.interview-row {
+  display: flex;
+  align-items: flex-start;
+  text-align: left;
+}
+
+/* 3. '신랑 세민', '신부 지현' 고정 너비 설정 (답변 시작 위치 동일하게 맞춤) */
+.interview-name {
+  width: 95px;
+  min-width: 95px;
+  flex-shrink: 0;
+  font-weight: bold;
+}
+
+/* 신랑/신부 이름 색상 구분 (원하실 경우 유지) */
+.groom-name {
+  color: #556080;
+}
+
+.bride-name {
+  color: #d17b7b;
+}
+
+/* 4. 답변 텍스트 스타일 */
+.interview-text {
+  flex: 1;
+  white-space: pre-line; /* \n 줄바꿈 적용 */
+  line-height: 1.6;
+  color: #333333;
 }
