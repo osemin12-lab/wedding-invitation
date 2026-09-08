@@ -112,21 +112,20 @@ p.interview-question {
   display: block;
 }
 
-/* 4. 하단 텍스트 영역 레이아웃 */
+/* 4. 하단 텍스트 영역 레이아웃 (잘림 유발 속성 제거) */
 .interview-text-box {
   display: flex;
   align-items: flex-start;
   text-align: left;
-  padding: 16px 10px;
+  padding: 16px 12px;
   box-sizing: border-box;
   width: 100%;
-  overflow: hidden;
 }
 
 /* 5. '신랑 세민', '신부 지현' 이름 폭 조정 */
 .interview-name {
-  width: 70px !important;
-  min-width: 70px !important;
+  width: 65px !important;
+  min-width: 65px !important;
   flex-shrink: 0 !important;
   font-weight: bold !important;
 }
@@ -140,13 +139,13 @@ p.interview-question {
   color: #d17b7b !important;
 }
 
-/* 6. 답변 텍스트 영역 */
+/* 6. 답변 텍스트 영역 (자연스러운 줄바꿈) */
 .interview-text {
   flex: 1;
   min-width: 0 !important;
-  white-space: pre-line;
+  white-space: pre-wrap !important;
   line-height: 1.5;
   color: #333333;
-  word-break: break-all !important;
+  word-break: keep-all !important;
   overflow-wrap: break-word !important;
 }
