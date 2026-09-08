@@ -8,11 +8,12 @@ import Gallery from './components/Gallery'
 import Location from './components/Location'
 import Bgmplayer from './Bgmplayer'
 
-// src/assets 경로 기준 (파일명 확장자 대소문자 주의)
-import brideImg from './assets/image10.JPG' 
-import groomImg from './assets/image11.JPG' 
+// src/assets 경로에 맞게 올바른 상대경로로 수정되었습니다.
+import brideImg from './assets/image10.jpg' // 신부 사진
+import groomImg from './assets/image11.jpg' // 신랑 사진
 
 function App() {
+  // 인터뷰 데이터
   const interview = {
     question: "Q. 신랑 신부는 어떤 사람인가요?",
     groomAnswer: "제 신부는,\n배려심이 깊고 저를 늘 웃게 만드는 사람입니다.",
@@ -21,18 +22,25 @@ function App() {
 
   return (
     <div>
+      {/* 배경음악 플레이어 */}
       <Bgmplayer />
+
+      {/* 1. 메인 화면 (커버) */}
       <Header />
+
+      {/* 2. 초대글 */}
       <Invitation />
+
+      {/* 3. 신랑·신부 계좌번호 (마음 전하실 곳) */}
       <AccountInfo />
 
-      {/* 미니 인터뷰 */}
+      {/* 4. 미니 인터뷰 (마음 전하실 곳 바로 아래) */}
       <div className="interview-section">
         <div className="interview-divider" />
         <p className="interview-question">{interview.question}</p>
            
         <div className="interview-content">
-          {/* 신랑 세민 (상단 신부 사진) */}
+          {/* 신랑 세민 답변 카드 (상단 신부 사진 image10.jpg) */}
           <div className="interview-row">
             <div className="interview-img-box">
               <img src={brideImg} alt="신부 사진" className="interview-card-img" />
@@ -43,7 +51,7 @@ function App() {
             </div>
           </div>
 
-          {/* 신부 지현 (상단 신랑 사진) */}
+          {/* 신부 지현 답변 카드 (상단 신랑 사진 image11.jpg) */}
           <div className="interview-row">
             <div className="interview-img-box">
               <img src={groomImg} alt="신랑 사진" className="interview-card-img" />
@@ -56,7 +64,13 @@ function App() {
         </div>
       </div>
 
+      {/* 5. 결혼식 일시 & 달력 (D-Day) - 카운트다운 숨김 */}
+      {/* <Countdown /> */}
+
+      {/* 6. 갤러리 */}
       <Gallery />
+
+      {/* 7. 오시는 길 (지도) */}
       <Location />
     </div>
   )
