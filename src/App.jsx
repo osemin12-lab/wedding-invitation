@@ -16,8 +16,8 @@ function App() {
   // 인터뷰 데이터
   const interview = {
     question: "Q. 신랑 신부는 어떤 사람인가요?",
-    groomAnswer: "제 신부는,\n배려심이 깊고 저를 늘 웃게 만드는 사람입니다.",
-    brideAnswer: "제 신랑은,\n다정하고 제가 웃을 때 가장 행복해하는 사람입니다."
+    groomAnswer: "제 신부는,  배려심이 깊고 저를 늘 웃게 만드는 사람입니다.",
+    brideAnswer: "제 신랑은,  다정하고 제가 웃을 때 가장 행복해하는 사람입니다."
   }
 
   return (
