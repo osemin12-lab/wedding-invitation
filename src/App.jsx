@@ -8,9 +8,9 @@ import Gallery from './components/Gallery'
 import Location from './components/Location'
 import Bgmplayer from './Bgmplayer'
 
-// 이미지 import (assets 폴더 경로가 맞는지 확인해 주세요)
-import brideImg from './assets/image10.jpg' // 신부 사진
-import groomImg from './assets/image11.jpg' // 신랑 사진
+// 이미지 import (public 또는 assets 경로에 맞게 확장자 확인)
+import brideImg from './public/image10.jpg' // 신부 사진
+import groomImg from './public/image11.jpg' // 신랑 사진
 
 function App() {
   // 인터뷰 데이터
@@ -40,7 +40,7 @@ function App() {
         <p className="interview-question">{interview.question}</p>
            
         <div className="interview-content">
-          {/* 신랑 세민 답변 카드 (위에 신부 사진 image10.jpg) */}
+          {/* 신랑 세민 답변 카드 (상단 신부 사진 image10.jpg) */}
           <div className="interview-row">
             <div className="interview-img-box">
               <img src={brideImg} alt="신부 사진" className="interview-card-img" />
@@ -51,7 +51,7 @@ function App() {
             </div>
           </div>
 
-          {/* 신부 지현 답변 카드 (위에 신랑 사진 image11.jpg) */}
+          {/* 신부 지현 답변 카드 (상단 신랑 사진 image11.jpg) */}
           <div className="interview-row">
             <div className="interview-img-box">
               <img src={groomImg} alt="신랑 사진" className="interview-card-img" />
