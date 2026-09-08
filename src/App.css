@@ -94,8 +94,8 @@ p.interview-question {
 /* 3. 모바일 최적화 네모 사진 영역 */
 .interview-img-box {
   width: 100%;
-  height: 180px; /* 모바일에서 한눈에 들어오는 권장 높이 (160px~190px 최적) */
-  max-height: 200px;
+  height: 360px; /* 모바일에서 한눈에 들어오는 권장 높이 (160px~190px 최적) */
+  max-height: 400px;
   overflow: hidden;
   background-color: #f8f8f8;
 }
