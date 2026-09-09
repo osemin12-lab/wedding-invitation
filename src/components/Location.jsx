@@ -53,6 +53,8 @@ const KakaoMap = ({ centerLat, centerLng, markers }) => {
     if (window.kakao && window.kakao.maps) {
       window.kakao.maps.load(() => {
         const container = mapRef.current;
+        if (!container) return;
+
         const options = {
           center: new window.kakao.maps.LatLng(centerLat, centerLng),
           level: 4, // 2개 장소가 한 번에 보이도록 확대 레벨 설정
@@ -75,7 +77,7 @@ const KakaoMap = ({ centerLat, centerLng, markers }) => {
         });
       });
     }
-  }, [centerLat, centerLng, markers]);
+  }, []); // 의존성 배열을 []로 고정하여 최초 1회만 지도 로드
 
   return <MapContainer ref={mapRef} />;
 };
