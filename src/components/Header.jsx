@@ -4,7 +4,7 @@ function Header() {
   return (
     <header className="header-wrapper">
       <div className="header-content">
-        <p className="date-line">26 . 10 . 24 | 17:00</p>
+        <p className="date-line">26 . 10 . 24 . 오후 5시</p>
         <p className="day">오세민 ♡ 이지현</p>
         <p className="datetime">창원 힐스카이웨딩&컨벤션 10층 힐그랜드</p>
 
