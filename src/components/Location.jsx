@@ -77,7 +77,7 @@ const KakaoMap = ({ centerLat, centerLng, markers }) => {
         });
       });
     }
-  }, []); // 의존성 배열을 []로 고정하여 최초 1회만 지도 로드
+  }, []); // 의존성 배열을 []로 두어 최초 1회만 고정 초기화
 
   return <MapContainer ref={mapRef} />;
 };
@@ -97,7 +97,7 @@ export default function Location() {
         markers={locationData.markers} 
       />
 
-      {/* 웨딩홀 정보 (주소 <-> 홀 순서 변경) */}
+      {/* 웨딩홀 정보 */}
       <InfoSection>
         <VenueTitle>{locationData.title}</VenueTitle>
         <AddressText>{locationData.address}</AddressText>
